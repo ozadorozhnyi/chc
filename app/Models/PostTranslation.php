@@ -11,9 +11,14 @@ class PostTranslation extends Model
     use HasFactory;
 
     public $timestamps = false;
-    
+
     public function language(): BelongsTo
     {
         return $this->belongsTo(Language::class);
+    }
+
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class);
     }
 }

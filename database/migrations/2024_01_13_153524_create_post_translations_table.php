@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('post_translations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('post_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
-            $table->foreignId('language_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('post_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('language_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->text('content');

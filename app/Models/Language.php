@@ -12,6 +12,10 @@ class Language extends Model
 
     public $timestamps = false;
 
+    protected $fillable = [
+        'locale', 'prefix',
+    ];
+
     public function translations(): HasMany
     {
         return $this->hasMany(PostTranslation::class);
