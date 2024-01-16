@@ -27,26 +27,4 @@ class PostTranslationSeeder extends Seeder
             }
         }
     }
-
-    /**
-     * Seed PostTranslation with error handling.
-     *
-     * @param  \App\Models\Post  $post
-     * @param  \App\Models\Language  $language
-     * @return void
-     */
-    private function seedPostTranslation(Post $post, Language $language): void
-    {
-        try {
-            PostTranslation::factory()->create([
-                'post_id' => $post->id,
-                'language_id' => $language->id,
-            ]);
-        } catch (\Exception $error) {
-            Log::error("Error seeding PostTranslation: {$error->getMessage()}", [
-                'post_id' => $post->id,
-                'language_id' => $language->id,
-            ]);
-        }
-    }
 }
