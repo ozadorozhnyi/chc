@@ -16,6 +16,11 @@ class Language extends Model
         'locale', 'prefix',
     ];
 
+    /**
+     * Get all available translations.
+     *
+     * @return HasMany
+     */
     public function translations(): HasMany
     {
         return $this->hasMany(PostTranslation::class);
